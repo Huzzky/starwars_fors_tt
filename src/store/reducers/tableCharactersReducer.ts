@@ -9,7 +9,7 @@ const initialState = {
   
   export const tableCharactersReducer = (
     state = initialState,
-    {type, data, pagination} : {type:string, data:any[], pagination:string[]},
+    {type, data, pagination} : {type:string, data:any[], pagination:(string | null)[]},
   ) => {
     switch (type) {
       case REQUEST_TO_SERVER_FROM_DATA:
