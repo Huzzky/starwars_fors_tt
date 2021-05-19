@@ -9,6 +9,7 @@ const initialState = {
   pagination: [],
   isLoading: false,
   isError: false,
+  pageId: 1,
 }
 
 export const tableCharactersReducer = (
@@ -17,7 +18,13 @@ export const tableCharactersReducer = (
     type,
     data,
     pagination,
-  }: { type: string; data: any[]; pagination: (string | null)[] },
+    pageId,
+  }: {
+    type: string
+    data: any[]
+    pagination: (string | null)[]
+    pageId: number
+  },
 ) => {
   switch (type) {
     case REQUEST_TO_SERVER_FROM_DATA:

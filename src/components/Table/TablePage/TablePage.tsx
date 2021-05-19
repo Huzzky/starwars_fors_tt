@@ -1,10 +1,20 @@
 import { memo } from 'react'
-import { TableWithRows } from '../Row/TableWithRows/index'
+import { BtnOfPagination } from '../../DRYComponents/BtnOfPagination'
+import { paginationVariable } from '../../../const'
+import { TablePageLoader } from '../TablePageLoader'
 
 const TablePage = () => {
+  const arrayBtnOfPagination = paginationVariable.map((value, index) => {
+    return (
+      <div key={index}>
+        <BtnOfPagination typeBtnPagination={value} />
+      </div>
+    )
+  })
   return (
     <div>
-      <TableWithRows />
+      <TablePageLoader />
+      <div style={{ display: 'flex' }}>{arrayBtnOfPagination}</div>
     </div>
   )
 }

@@ -6,7 +6,6 @@ import {
 import { getToServer } from '../../utils/request'
 
 const requestToServerWithData = (pageId: number) => {
-  //
   return (dispatch: any) => {
     dispatch({
       type: REQUEST_TO_SERVER_FROM_DATA,
@@ -15,9 +14,11 @@ const requestToServerWithData = (pageId: number) => {
     getToServer(pageId)
       .then((response) => {
         try {
+          console.log(response)
           dispatch({
             type: SUCCESS_TO_SERVER_FROM_DATA,
             data: response.results,
+            pagination: [response.next, response.previous],
           })
         } catch {
           dispatch({

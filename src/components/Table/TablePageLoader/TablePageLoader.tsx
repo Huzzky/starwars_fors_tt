@@ -1,7 +1,7 @@
-import { memo, useEffect } from 'react'
+import { memo, useLayoutEffect } from 'react'
 import { connect } from 'react-redux'
-import { TablePage } from '../TablePage/index'
 import { requestToServerWithData } from '../../../store/actions/requestToServerWithData'
+import { TableWithRows } from '../Row/TableWithRows'
 
 const TablePageLoader = ({
   isLoading,
@@ -14,7 +14,7 @@ const TablePageLoader = ({
   data: any[]
   getToServerFromData: any
 }) => {
-  useEffect(() => {
+  useLayoutEffect(() => {
     if (data.length === 0 && !isLoading && !isError) getToServerFromData(1)
   })
 
@@ -23,7 +23,9 @@ const TablePageLoader = ({
   ) : isError ? (
     <h1>Ошибка</h1>
   ) : (
-    <TablePage />
+    <div>
+      <TableWithRows />
+    </div>
   )
 }
 

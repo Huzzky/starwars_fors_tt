@@ -1,10 +1,10 @@
 import './App.css'
-import { TablePageLoader } from './components/Table/TablePageLoader/index'
+import { TablePage } from './components/Table/TablePage'
 
 function App() {
   return (
     <div className="App">
-      <TablePageLoader />
+      <TablePage />
     </div>
   )
 }
