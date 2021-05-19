@@ -2,10 +2,10 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { paginationVariable } from '../../../const'
 import { requestToServerWithData } from '../../../store/actions/requestToServerWithData'
-import { determinatePagination } from '../../../utils/determinateWithDataPagination'
+import { determinateDisableBtnPagination } from '../../../utils/determinateDisableBtnPagination'
+import { directionBtnClickPagination } from '../../../utils/directionBtnClickPagination'
 
 const BtnOfPagination = ({
-  typeBtnPagination,
   pagination,
   isLoading,
   isError,
@@ -14,47 +14,34 @@ const BtnOfPagination = ({
 }: {
   isLoading: boolean
   isError: boolean
-  typeBtnPagination: string
   pagination: (string | null)[]
   getToServerFromData: any
   pageId: number
 }) => {
-  const prevPageClick = (
-    pageId: number,
-    func: any,
-    pagination: null | string,
-  ) => {
-    if (pagination !== null) {
-      pageId--
-      func(pageId)
-    }
-  }
-  const nextPageClick = (
-    pageId: number,
-    func: any,
-    pagination: null | string,
-  ) => {
-    if (pagination !== null) {
-      pageId++
-      func(pageId)
-    }
-  }
-  console.log(typeof pagination[1])
-  return typeBtnPagination !== paginationVariable[0] ? (
-    <button
-      onClick={() => nextPageClick(pageId, getToServerFromData, pagination[0])}
-      disabled={determinatePagination(pagination[0], isLoading, isError)}
-    >
-      {'>'}
-    </button>
-  ) : (
-    <button
-      onClick={() => prevPageClick(pageId, getToServerFromData, pagination[1])}
-      disabled={determinatePagination(pagination[1], isLoading, isError)}
-    >
-      {'<'}
-    </button>
-  )
+  const btnOfPaginationVariable = paginationVariable.map((value, index) => {
+    return (
+      <button
+        key={index}
+        onClick={() =>
+          directionBtnClickPagination(
+            pageId,
+            getToServerFromData,
+            pagination[index],
+            value,
+          )
+        }
+        disabled={determinateDisableBtnPagination(
+          pagination[index],
+          isLoading,
+          isError,
+        )}
+      >
+        {value === paginationVariable[0] ? '>' : '<'}
+      </button>
+    )
+  })
+
+  return <div>{btnOfPaginationVariable}</div>
 }
 
 const mapStateToProps = ({
