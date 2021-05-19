@@ -1,8 +1,16 @@
 import { memo } from 'react'
 import { connect } from 'react-redux'
+import { RowInTable } from '../RowInTable/index'
 
 const TableWithRows = ({ data }: { data: any[] }) => {
-  return <div>супер</div>
+  const rowsWithDataOfPerson = data.map((value, index) => {
+    return (
+      <div key={index} style={{ display: 'flex' }}>
+        <RowInTable {...value} />
+      </div>
+    )
+  })
+  return <div>{rowsWithDataOfPerson}</div>
 }
 
 const mapStateToProps = ({
