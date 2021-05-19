@@ -9,7 +9,7 @@ const SUCCESS_TO_SERVER_FROM_DATA_WITH_SEARCH_NAME =
 const ERROR_TO_SERVER_FROM_DATA_WITH_SEARCH_NAME =
   'ERROR_TO_SERVER_FROM_DATA_WITH_SEARCH_NAME'
 
-const paginationVariable = ['next', 'back']
+const paginationVariable = ['back', 'next']
 const variableRowInTable = ['name', 'gender', 'mass', 'eye_color']
 
 export {

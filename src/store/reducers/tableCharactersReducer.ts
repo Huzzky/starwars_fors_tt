@@ -44,6 +44,8 @@ export const tableCharactersReducer = (
     case ERROR_TO_SERVER_FROM_DATA:
       return {
         ...state,
+        dataOfTable: [],
+        pagination: [],
         isLoading: false,
         isError: true,
       }

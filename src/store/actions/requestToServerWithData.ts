@@ -3,7 +3,7 @@ import {
   SUCCESS_TO_SERVER_FROM_DATA,
   ERROR_TO_SERVER_FROM_DATA,
 } from '../../const'
-import { getToServer } from '../../utils/request'
+import { getToServer } from '../../api/request'
 
 const requestToServerWithData = (pageId: number) => {
   return (dispatch: any) => {
@@ -18,7 +18,7 @@ const requestToServerWithData = (pageId: number) => {
           dispatch({
             type: SUCCESS_TO_SERVER_FROM_DATA,
             data: response.results,
-            pagination: [response.next, response.previous],
+            pagination: [response.previous, response.next],
             pageId: pageId,
           })
         } catch {

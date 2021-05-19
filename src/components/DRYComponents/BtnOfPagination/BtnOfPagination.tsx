@@ -36,7 +36,7 @@ const BtnOfPagination = ({
           isError,
         )}
       >
-        {value === paginationVariable[0] ? '>' : '<'}
+        {value === 'next' ? '>' : '<'}
       </button>
     )
   })
@@ -51,7 +51,7 @@ const mapStateToProps = ({
 }) => ({
   pagination: tableCharactersReducer.pagination,
   isLoading: tableCharactersReducer.isLoading,
-  isError: tableCharactersReducer.isLoading,
+  isError: tableCharactersReducer.isError,
   pageId: tableCharactersReducer.pageId,
 })
 

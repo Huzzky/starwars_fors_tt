@@ -19,9 +19,9 @@ const TablePageLoader = ({
   })
 
   return isLoading ? (
-    <h1>Загрузка</h1>
+    <h1>Загрузка...</h1>
   ) : isError ? (
-    <h1>Ошибка</h1>
+    <h1>Ошибка. Перезагрузите, пожалуйста, страницу.</h1>
   ) : (
     <div>
       <TableWithRows />
