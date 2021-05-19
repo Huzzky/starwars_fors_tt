@@ -19,6 +19,7 @@ const requestToServerWithData = (pageId: number) => {
             type: SUCCESS_TO_SERVER_FROM_DATA,
             data: response.results,
             pagination: [response.next, response.previous],
+            pageId: pageId,
           })
         } catch {
           dispatch({

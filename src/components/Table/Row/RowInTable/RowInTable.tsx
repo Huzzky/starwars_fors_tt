@@ -1,31 +1,25 @@
 import { memo } from 'react'
+import { variableRowInTable } from '../../../../const'
 import { LabelTextTable } from '../../../DRYComponents/LabelTextTable'
 
-const RowInTable = ({
-  name,
-  gender,
-  mass,
-  eye_color,
-}: {
-  name: string
-  gender: string
-  mass: string
-  eye_color: string
-}) => {
-  return (
-    <>
-      <LabelTextTable text={name} className="" />
+type RowInTableProps = {
+  values: {
+    [index: string]: any
+  }
+}
+
+const RowInTable = ({ values }: RowInTableProps) => {
+  const arrayLabelTextTable = variableRowInTable.map((value, index) => {
+    return (
       <LabelTextTable
-        text={gender === 'n/a' ? 'Нет данных' : gender}
-        className=""
+        text={values[value]}
+        key={index}
+        className={value + '-style'}
       />
-      <LabelTextTable text={mass} className="" />
-      <LabelTextTable
-        text={eye_color === 'n/a' ? 'Нет данных' : eye_color}
-        className=""
-      />
-    </>
-  )
+    )
+  })
+
+  return <tr>{arrayLabelTextTable}</tr>
 }
 
 export default memo(RowInTable)

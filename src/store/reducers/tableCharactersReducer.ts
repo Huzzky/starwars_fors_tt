@@ -39,6 +39,7 @@ export const tableCharactersReducer = (
         pagination: pagination,
         isLoading: false,
         isError: false,
+        pageId: pageId,
       }
     case ERROR_TO_SERVER_FROM_DATA:
       return {

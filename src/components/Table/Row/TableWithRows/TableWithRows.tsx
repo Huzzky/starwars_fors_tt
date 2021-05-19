@@ -5,12 +5,13 @@ import { RowInTable } from '../RowInTable/index'
 const TableWithRows = ({ data }: { data: any[] }) => {
   const rowsWithDataOfPerson = data.map((value, index) => {
     return (
-      <div key={index} style={{ display: 'flex' }}>
-        <RowInTable {...value} />
-      </div>
+      <thead key={index}>
+        <RowInTable values={value} />
+      </thead>
     )
   })
-  return <div>{rowsWithDataOfPerson}</div>
+
+  return <table>{rowsWithDataOfPerson}</table>
 }
 
 const mapStateToProps = ({

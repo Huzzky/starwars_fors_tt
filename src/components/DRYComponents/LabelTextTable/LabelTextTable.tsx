@@ -7,7 +7,7 @@ const LabelTextTable = ({
   className: string
   text: string
 }) => {
-  return <p className={className}>{text}</p>
+  return <th className={className}>{text}</th>
 }
 
 export default memo(LabelTextTable)
