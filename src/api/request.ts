@@ -5,7 +5,7 @@ const getToServer = async (idPage: number) => {
     new Promise((_, reject) => {
       setTimeout(() => {
         reject('Error connection')
-      }, 5000)
+      }, 10000)
     }),
     await (await fetch(`${URL_TABLE}${idPage}`)).json(),
   ])

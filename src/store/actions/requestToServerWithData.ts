@@ -13,7 +13,7 @@ const requestToServerWithData = (pageId: number) => {
 
     getToServer(pageId)
       .then((response) => {
-        try {
+        if (!response.hasOwnProperty('detail')) {
           console.log(response)
           dispatch({
             type: SUCCESS_TO_SERVER_FROM_DATA,
@@ -21,10 +21,9 @@ const requestToServerWithData = (pageId: number) => {
             pagination: [response.previous, response.next],
             pageId: pageId,
           })
-        } catch {
+        } else {
           dispatch({
-            type: SUCCESS_TO_SERVER_FROM_DATA,
-            data: [],
+            type: ERROR_TO_SERVER_FROM_DATA,
           })
         }
       })

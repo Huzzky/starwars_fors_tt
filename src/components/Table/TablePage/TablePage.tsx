@@ -1,13 +1,15 @@
 import { memo } from 'react'
-import { BtnOfPagination } from '../../DRYComponents/BtnOfPagination'
+import { BtnOfPaginationTable } from '../BtnOfPaginationTable'
 import { TablePageLoader } from '../TablePageLoader'
+import { SearchPanelInTable } from '../Search Panel Table/SearchPanelInTable'
 
 const TablePage = () => {
   return (
     <div>
+      <SearchPanelInTable />
       <TablePageLoader />
       <div style={{ display: 'flex' }}>
-        <BtnOfPagination />
+        <BtnOfPaginationTable />
       </div>
     </div>
   )

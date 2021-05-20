@@ -5,7 +5,7 @@ import { requestToServerWithData } from '../../../store/actions/requestToServerW
 import { determinateDisableBtnPagination } from '../../../utils/determinateDisableBtnPagination'
 import { directionBtnClickPagination } from '../../../utils/directionBtnClickPagination'
 
-const BtnOfPagination = ({
+const BtnOfPaginationTable = ({
   pagination,
   isLoading,
   isError,
@@ -61,5 +61,5 @@ const mapDispatchToProps = (dispatch: any) => ({
 })
 
 export default memo(
-  connect(mapStateToProps, mapDispatchToProps)(BtnOfPagination),
+  connect(mapStateToProps, mapDispatchToProps)(BtnOfPaginationTable),
 )
