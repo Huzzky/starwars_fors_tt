@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { connect } from 'react-redux'
 import { requestToServerWithData } from '../../../../store/actions/requestToServerWithData'
+import './_SearchBtnTable.css'
 
 type SearchBtnInTableProps = {
   name: string
@@ -20,6 +21,7 @@ const SearchBtnInTable = ({
   }
   return (
     <button
+      className="form__btn-search"
       disabled={determinateDisabledBtnSearch()}
       onClick={() => {
         searchName(name, 1)

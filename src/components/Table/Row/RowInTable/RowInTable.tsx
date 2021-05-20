@@ -1,6 +1,6 @@
 import { memo } from 'react'
 import { variableRowInTable } from '../../../../const'
-import { LabelTextTable } from '../../../DRYComponents/LabelTextTable'
+import { LabelTextTable } from '../LabelTextTable/index'
 
 type RowInTableProps = {
   values: {

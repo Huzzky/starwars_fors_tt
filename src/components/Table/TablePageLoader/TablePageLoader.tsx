@@ -2,6 +2,7 @@ import { memo, useLayoutEffect } from 'react'
 import { connect } from 'react-redux'
 import { requestToServerWithData } from '../../../store/actions/requestToServerWithData'
 import { TableWithRows } from '../Row/TableWithRows'
+import './_TablePageLoader.css'
 
 type TablePageLoaderProps = {
   isLoading: boolean
@@ -20,11 +21,13 @@ const TablePageLoader = ({
   })
 
   return isLoading ? (
-    <h1>Loading...</h1>
+    <p className="table-page__p-loader">Loading...</p>
   ) : isError ? (
-    <h1>Bad connection with server. Reload page, please.</h1>
+    <p className="table-page__p-error">
+      Bad connection with server. Reload page, please.
+    </p>
   ) : (
-    <div>
+    <div className="table-page__container-rows">
       <TableWithRows />
     </div>
   )

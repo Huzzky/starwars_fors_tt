@@ -4,6 +4,7 @@ import { paginationVariable } from '../../../const'
 import { requestToServerWithData } from '../../../store/actions/requestToServerWithData'
 import { determinateDisableBtnPagination } from '../../../utils/determinateDisableBtnPagination'
 import { directionBtnClickPagination } from '../../../utils/directionBtnClickPagination'
+import './_BtnOfPaginationTable.css'
 
 type BtnOfPaginationTableProps = {
   isLoading: boolean
@@ -25,6 +26,7 @@ const BtnOfPaginationTable = ({
   const btnOfPaginationVariable = paginationVariable.map((value, index) => {
     return (
       <button
+        className={`table-page__btn-pagintaion--${value}`}
         key={index}
         onClick={() =>
           directionBtnClickPagination(
@@ -46,7 +48,7 @@ const BtnOfPaginationTable = ({
     )
   })
 
-  return <div>{btnOfPaginationVariable}</div>
+  return <>{btnOfPaginationVariable}</>
 }
 
 const mapStateToProps = ({

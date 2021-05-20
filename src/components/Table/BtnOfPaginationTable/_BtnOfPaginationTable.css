@@ -1,0 +1,50 @@
+
+.table-page__btn-pagintaion--next {
+    width: 5em;
+    height: 3em;
+    background: none;
+    outline: none;
+    border: 2px solid rgba(13, 13, 13, 0.35);
+    cursor: pointer;
+}
+
+.table-page__btn-pagintaion--next:disabled {
+    cursor: auto;
+    border: 2px solid rgba(13, 13, 13, 0.25);
+}
+.table-page__btn-pagintaion--next:disabled:hover {
+    background: none;
+
+    border: 2px solid rgba(13, 13, 13, 0.25)
+}
+.table-page__btn-pagintaion--next:hover {
+    background: rgba(13, 13, 13, 0.025);
+    border: 2px solid rgba(13, 13, 13, 0.5)
+}
+
+
+
+.table-page__btn-pagintaion--back {
+    width: 5em;
+    height: 3em;
+    background: none;
+    outline: none;
+    border: 2px solid rgba(13, 13, 13, 0.35);
+    cursor: pointer;
+}
+
+.table-page__btn-pagintaion--back:disabled {
+    cursor: auto;
+    border: 2px solid rgba(13, 13, 13, 0.25);
+}
+
+.table-page__btn-pagintaion--back:disabled:hover {
+    background: none;
+
+    border: 2px solid rgba(13, 13, 13, 0.25)
+}
+.table-page__btn-pagintaion--back:hover {
+    background: rgba(13, 13, 13, 0.025);
+
+    border: 2px solid rgba(13, 13, 13, 0.5)
+}

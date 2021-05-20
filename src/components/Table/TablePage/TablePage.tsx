@@ -2,13 +2,14 @@ import { memo } from 'react'
 import { BtnOfPaginationTable } from '../BtnOfPaginationTable'
 import { TablePageLoader } from '../TablePageLoader'
 import { SearchPanelInTable } from '../Search Panel Table/SearchPanelInTable'
+import './_TablePage.css'
 
 const TablePage = () => {
   return (
-    <div>
+    <div className="table-page">
       <SearchPanelInTable />
       <TablePageLoader />
-      <div style={{ display: 'flex' }}>
+      <div className="table-page__btn-pagination-container">
         <BtnOfPaginationTable />
       </div>
     </div>

@@ -1,6 +1,7 @@
 import { memo } from 'react'
 import { connect } from 'react-redux'
 import { userRecordNameForSearch } from '../../../../store/actions/userRecordNameForSearch'
+import './_SearchInputInTable.css'
 
 type SearcgInputInTable = {
   recordName: any
@@ -18,6 +19,7 @@ const SearchInputInTable = ({
   }
   return (
     <input
+      className="form__search-input"
       disabled={determinateDisabledInputSearch()}
       onChange={(e) => {
         recordName(e.currentTarget.value)

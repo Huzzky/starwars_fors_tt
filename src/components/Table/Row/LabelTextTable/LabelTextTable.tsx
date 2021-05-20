@@ -6,7 +6,7 @@ type LabelTextTableProps = {
 }
 
 const LabelTextTable = ({ className, text }: LabelTextTableProps) => {
-  return <th className={className}>{text}</th>
+  return <td className={className}>{text}</td>
 }
 
 export default memo(LabelTextTable)
