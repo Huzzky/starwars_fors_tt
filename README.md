@@ -1,46 +1,12 @@
-# Getting Started with Create React App
+[![DeepScan grade](https://deepscan.io/api/teams/13726/projects/17233/branches/388686/badge/grade.svg)](https://deepscan.io/dashboard#view=project&tid=13726&pid=17233&bid=388686)
+[![CodeFactor](https://www.codefactor.io/repository/github/huzzky/starwars_fors_tt/badge)](https://www.codefactor.io/repository/github/huzzky/starwars_fors_tt)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Для установки зависимостей - `yarn add` или `npm install`
 
-## Available Scripts
+Для запуска - `yarn start` или `npm start`
 
-In the project directory, you can run:
+Запущенный проект - https://huzzky.github.io/starwars_fors_tt/
 
-### `yarn start`
+# Неадаптированный дизайн
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![demo](https://psv4.userapi.com/c505536/u284279466/docs/d46/dac3ecce8484/Novy-proekt.gif?extra=Yk_O86G56c8fyM-I-c2Ri25TDiT_PcVOrMB7XRyM9itjcE4V838r3EUhFG1NTPliIh8RzDV--Qn-L3ifJm-HIuCP1WVabEQqi_lapK03sbBkl06d-HJuLmXjJJ79331ZYSZQuncc7toyi9lxCn2wCHEd)
