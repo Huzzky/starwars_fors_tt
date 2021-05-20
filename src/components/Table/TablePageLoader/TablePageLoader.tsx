@@ -15,7 +15,7 @@ const TablePageLoader = ({
   getToServerFromData: any
 }) => {
   useLayoutEffect(() => {
-    if (data.length === 0 && !isLoading && !isError) getToServerFromData(1)
+    if (data.length === 0 && !isLoading && !isError) getToServerFromData('', 1)
   })
 
   return isLoading ? (
@@ -40,8 +40,8 @@ const mapStateToProps = ({
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
-  getToServerFromData: (pageId: number) =>
-    dispatch(requestToServerWithData(pageId)),
+  getToServerFromData: (name: string, pageId: number) =>
+    dispatch(requestToServerWithData(name, pageId)),
 })
 
 export default memo(

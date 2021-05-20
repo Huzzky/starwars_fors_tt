@@ -5,10 +5,10 @@ import { SearchBtnInTable } from '../SearchBtnInTable'
 
 const SearchPanelInTable = () => {
   return (
-    <div>
+    <form>
       <SearchInputInTable />
       <SearchBtnInTable />
-    </div>
+    </form>
   )
 }
 

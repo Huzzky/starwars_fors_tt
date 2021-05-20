@@ -4,11 +4,15 @@ import { RowInTable } from '../RowInTable/index'
 
 const TableWithRows = ({ data }: { data: any[] }) => {
   const rowsWithDataOfPerson = data.map((value, index) => {
-    return (
-      <thead key={index}>
-        <RowInTable values={value} />
-      </thead>
-    )
+    if (value.hasOwnProperty('error')) {
+      return <p>{value.error}.</p>
+    } else {
+      return (
+        <thead key={index}>
+          <RowInTable values={value} />
+        </thead>
+      )
+    }
   })
 
   return <table>{rowsWithDataOfPerson}</table>

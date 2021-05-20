@@ -11,12 +11,14 @@ const BtnOfPaginationTable = ({
   isError,
   getToServerFromData,
   pageId,
+  name,
 }: {
   isLoading: boolean
   isError: boolean
   pagination: (string | null)[]
   getToServerFromData: any
   pageId: number
+  name: string
 }) => {
   const btnOfPaginationVariable = paginationVariable.map((value, index) => {
     return (
@@ -28,6 +30,7 @@ const BtnOfPaginationTable = ({
             getToServerFromData,
             pagination[index],
             value,
+            name,
           )
         }
         disabled={determinateDisableBtnPagination(
@@ -46,9 +49,12 @@ const BtnOfPaginationTable = ({
 
 const mapStateToProps = ({
   tableCharactersReducer,
+  userActions,
 }: {
   tableCharactersReducer: any
+  userActions: any
 }) => ({
+  name: userActions.nameFromUser,
   pagination: tableCharactersReducer.pagination,
   isLoading: tableCharactersReducer.isLoading,
   isError: tableCharactersReducer.isError,
@@ -56,8 +62,8 @@ const mapStateToProps = ({
 })
 
 const mapDispatchToProps = (dispatch: any) => ({
-  getToServerFromData: (pageId: number) =>
-    dispatch(requestToServerWithData(pageId)),
+  getToServerFromData: (nameFromUser: string, pageId: number) =>
+    dispatch(requestToServerWithData(nameFromUser, pageId)),
 })
 
 export default memo(

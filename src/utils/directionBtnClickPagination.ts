@@ -5,16 +5,17 @@ const directionBtnClickPagination = (
   func: any,
   pagination: null | string,
   direction: string,
+  name: string,
 ) => {
   if (direction === paginationVariable[1]) {
     if (pagination !== null) {
       pageId++
-      func(pageId)
+      func(name, pageId)
     }
   } else {
     if (pagination !== null) {
       pageId--
-      func(pageId)
+      func(name, pageId)
     }
   }
 }
