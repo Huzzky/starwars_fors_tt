@@ -13,6 +13,7 @@ const USER_RECORD_NAME_FOR_SEARCH = 'USER_RECORD_NAME_FOR_SEARCH'
 
 const paginationVariable = ['back', 'next']
 const variableRowInTable = ['name', 'gender', 'mass', 'eye_color']
+const nameRowInTable = ['Name', 'Gender', 'Mass', 'Eye color']
 
 export {
   REQUEST_TO_SERVER_FROM_DATA,
@@ -24,4 +25,5 @@ export {
   ERROR_TO_SERVER_FROM_DATA_WITH_SEARCH_NAME,
   paginationVariable,
   variableRowInTable,
+  nameRowInTable,
 }

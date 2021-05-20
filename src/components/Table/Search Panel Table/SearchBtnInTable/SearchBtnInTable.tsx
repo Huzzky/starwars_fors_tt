@@ -2,17 +2,19 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { requestToServerWithData } from '../../../../store/actions/requestToServerWithData'
 
+type SearchBtnInTableProps = {
+  name: string
+  searchName: any
+  isLoading: boolean
+  isError: boolean
+}
+
 const SearchBtnInTable = ({
   name,
   searchName,
   isLoading,
   isError,
-}: {
-  name: string
-  searchName: any
-  isLoading: boolean
-  isError: boolean
-}) => {
+}: SearchBtnInTableProps) => {
   let determinateDisabledBtnSearch = () => {
     return isLoading || isError
   }

@@ -3,25 +3,26 @@ import { connect } from 'react-redux'
 import { requestToServerWithData } from '../../../store/actions/requestToServerWithData'
 import { TableWithRows } from '../Row/TableWithRows'
 
+type TablePageLoaderProps = {
+  isLoading: boolean
+  isError: boolean
+  data: any[]
+  getToServerFromData: any
+}
 const TablePageLoader = ({
   isLoading,
   data,
   isError,
   getToServerFromData,
-}: {
-  isLoading: boolean
-  isError: boolean
-  data: any[]
-  getToServerFromData: any
-}) => {
+}: TablePageLoaderProps) => {
   useLayoutEffect(() => {
     if (data.length === 0 && !isLoading && !isError) getToServerFromData('', 1)
   })
 
   return isLoading ? (
-    <h1>Загрузка...</h1>
+    <h1>Loading...</h1>
   ) : isError ? (
-    <h1>Ошибка. Перезагрузите, пожалуйста, страницу.</h1>
+    <h1>Bad connection with server. Reload page, please.</h1>
   ) : (
     <div>
       <TableWithRows />

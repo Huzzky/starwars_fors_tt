@@ -2,15 +2,17 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { userRecordNameForSearch } from '../../../../store/actions/userRecordNameForSearch'
 
+type SearcgInputInTable = {
+  recordName: any
+  isLoading: boolean
+  isError: boolean
+}
+
 const SearchInputInTable = ({
   recordName,
   isLoading,
   isError,
-}: {
-  recordName: any
-  isLoading: boolean
-  isError: boolean
-}) => {
+}: SearcgInputInTable) => {
   let determinateDisabledInputSearch = () => {
     return isLoading || isError
   }

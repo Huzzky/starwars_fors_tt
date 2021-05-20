@@ -1,12 +1,11 @@
 import { memo } from 'react'
 
-const LabelTextTable = ({
-  className,
-  text,
-}: {
+type LabelTextTableProps = {
   className: string
   text: string
-}) => {
+}
+
+const LabelTextTable = ({ className, text }: LabelTextTableProps) => {
   return <th className={className}>{text}</th>
 }
 

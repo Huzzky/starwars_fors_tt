@@ -5,6 +5,15 @@ import { requestToServerWithData } from '../../../store/actions/requestToServerW
 import { determinateDisableBtnPagination } from '../../../utils/determinateDisableBtnPagination'
 import { directionBtnClickPagination } from '../../../utils/directionBtnClickPagination'
 
+type BtnOfPaginationTableProps = {
+  isLoading: boolean
+  isError: boolean
+  pagination: (string | null)[]
+  getToServerFromData: any
+  pageId: number
+  name: string
+}
+
 const BtnOfPaginationTable = ({
   pagination,
   isLoading,
@@ -12,14 +21,7 @@ const BtnOfPaginationTable = ({
   getToServerFromData,
   pageId,
   name,
-}: {
-  isLoading: boolean
-  isError: boolean
-  pagination: (string | null)[]
-  getToServerFromData: any
-  pageId: number
-  name: string
-}) => {
+}: BtnOfPaginationTableProps) => {
   const btnOfPaginationVariable = paginationVariable.map((value, index) => {
     return (
       <button
