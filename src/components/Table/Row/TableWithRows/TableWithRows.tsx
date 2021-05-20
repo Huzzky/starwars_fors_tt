@@ -11,7 +11,6 @@ type TableWithRowsProps = {
 }
 
 const TableWithRows = ({ data }: TableWithRowsProps) => {
-  console.log(data)
   const rowsWithDataOfPerson = data.map((value: any, index: number) => {
     if (value.hasOwnProperty('error')) {
       return ''
