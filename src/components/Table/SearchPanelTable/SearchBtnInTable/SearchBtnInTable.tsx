@@ -5,7 +5,7 @@ import styles from './_SearchBtnTable.module.css'
 
 type SearchBtnInTableProps = {
   name: string
-  searchName: any
+  searchName: Function
   isLoading: boolean
   isError: boolean
 }
@@ -36,15 +36,20 @@ const mapStateToProps = ({
   userActions,
   tableCharactersReducer,
 }: {
-  userActions: any
-  tableCharactersReducer: any
+  userActions: {
+    nameFromUser: string
+  }
+  tableCharactersReducer: {
+    isLoading: boolean
+    isError: boolean
+  }
 }) => ({
   name: userActions.nameFromUser,
   isLoading: tableCharactersReducer.isLoading,
   isError: tableCharactersReducer.isError,
 })
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   searchName: (name: string, pageId: number) =>
     dispatch(requestToServerWithData(name, pageId)),
 })

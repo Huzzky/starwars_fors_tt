@@ -7,8 +7,8 @@ import styles from './_TablePageLoader.module.css'
 type TablePageLoaderProps = {
   isLoading: boolean
   isError: boolean
-  data: any[]
-  getToServerFromData: any
+  data: object[]
+  getToServerFromData: Function
 }
 const TablePageLoader = ({
   isLoading,
@@ -36,7 +36,11 @@ const TablePageLoader = ({
 const mapStateToProps = ({
   tableCharactersReducer,
 }: {
-  tableCharactersReducer: any
+  tableCharactersReducer: {
+    isLoading: boolean
+    isError: boolean
+    dataOfTable: object[]
+  }
 }) => ({
   isLoading: tableCharactersReducer.isLoading,
   isError: tableCharactersReducer.isError,

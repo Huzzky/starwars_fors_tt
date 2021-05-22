@@ -4,7 +4,7 @@ import { userRecordNameForSearch } from '../../../../store/actions/userRecordNam
 import styles from './_SearchInputInTable.module.css'
 
 type SearcgInputInTable = {
-  recordName: any
+  recordName: Function
   isLoading: boolean
   isError: boolean
 }
@@ -31,13 +31,16 @@ const SearchInputInTable = ({
 const mapStateToProps = ({
   tableCharactersReducer,
 }: {
-  tableCharactersReducer: any
+  tableCharactersReducer: {
+    isLoading: boolean
+    isError: boolean
+  }
 }) => ({
   isLoading: tableCharactersReducer.isLoading,
   isError: tableCharactersReducer.isError,
 })
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   recordName: (name: string) => dispatch(userRecordNameForSearch(name)),
 })
 

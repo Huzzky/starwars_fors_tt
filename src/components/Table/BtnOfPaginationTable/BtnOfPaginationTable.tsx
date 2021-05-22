@@ -10,7 +10,7 @@ type BtnOfPaginationTableProps = {
   isLoading: boolean
   isError: boolean
   pagination: (string | null)[]
-  getToServerFromData: any
+  getToServerFromData: Function
   pageId: number
   name: string
 }
@@ -55,8 +55,15 @@ const mapStateToProps = ({
   tableCharactersReducer,
   userActions,
 }: {
-  tableCharactersReducer: any
-  userActions: any
+  tableCharactersReducer: {
+    pagination: (string | null)[]
+    isLoading: boolean
+    isError: boolean
+    pageId: number
+  }
+  userActions: {
+    nameFromUser: string
+  }
 }) => ({
   name: userActions.nameFromUser,
   pagination: tableCharactersReducer.pagination,
@@ -65,7 +72,7 @@ const mapStateToProps = ({
   pageId: tableCharactersReducer.pageId,
 })
 
-const mapDispatchToProps = (dispatch: any) => ({
+const mapDispatchToProps = (dispatch: Function) => ({
   getToServerFromData: (nameFromUser: string, pageId: number) =>
     dispatch(requestToServerWithData(nameFromUser, pageId)),
 })

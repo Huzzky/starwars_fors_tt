@@ -21,7 +21,7 @@ export const tableCharactersReducer = (
     pageId,
   }: {
     type: string
-    data: any[]
+    data: object[]
     pagination: (string | null)[]
     pageId: number
   },

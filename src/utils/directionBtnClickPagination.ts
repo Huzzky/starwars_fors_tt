@@ -2,7 +2,7 @@ import { paginationVariable } from '../const'
 
 const directionBtnClickPagination = (
   pageId: number,
-  func: any,
+  func: Function,
   pagination: null | string,
   direction: string,
   name: string,

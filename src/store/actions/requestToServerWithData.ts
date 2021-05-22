@@ -6,7 +6,7 @@ import {
 import { getToServer } from '../../api/request'
 
 const requestToServerWithData = (nameFromUser: string, pageId: number) => {
-  return (dispatch: any) => {
+  return (dispatch: Function) => {
     dispatch({
       type: REQUEST_TO_SERVER_FROM_DATA,
     })

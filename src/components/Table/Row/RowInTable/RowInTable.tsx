@@ -4,7 +4,7 @@ import { LabelTextTable } from '../LabelTextTable/index'
 
 type RowInTableProps = {
   values: {
-    [index: string]: any
+    [index: string]: string
   }
 }
 
