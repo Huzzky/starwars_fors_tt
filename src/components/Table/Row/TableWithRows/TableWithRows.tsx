@@ -2,7 +2,7 @@ import { memo } from 'react'
 import { connect } from 'react-redux'
 import { NameRowInTable } from '../NameRowInTable'
 import { RowInTable } from '../RowInTable/index'
-import './_TableWithRows.css'
+import styles from './_TableWithRows.module.css'
 
 type TableWithRowsProps = {
   data: {
@@ -19,10 +19,10 @@ const TableWithRows = ({ data }: TableWithRowsProps) => {
     }
   })
   if (data.length !== 0 && data[0].hasOwnProperty('error')) {
-    return <p className="table-page__p-error">{data[0].error}.</p>
+    return <p className={styles['table-page__p-error']}>{data[0].error}.</p>
   } else {
     return (
-      <table className="table-page__table">
+      <table className={styles['table-page__table']}>
         <NameRowInTable />
         <tbody>{rowsWithDataOfPerson}</tbody>
       </table>

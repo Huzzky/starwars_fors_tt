@@ -1,16 +1,15 @@
 import { memo } from 'react'
-import { connect } from 'react-redux'
 import { SearchInputInTable } from '../SearchInputInTable'
 import { SearchBtnInTable } from '../SearchBtnInTable'
-import './_SearchPanelTable.css'
+import styles from './_SearchPanelTable.module.css'
 
 const SearchPanelInTable = () => {
   return (
-    <form className="table-page__form">
+    <form className={styles['table-page__form']}>
       <SearchInputInTable />
       <SearchBtnInTable />
     </form>
   )
 }
 
-export default memo(connect()(SearchPanelInTable))
+export default memo(SearchPanelInTable)

@@ -1,15 +1,15 @@
 import { memo } from 'react'
 import { BtnOfPaginationTable } from '../BtnOfPaginationTable'
+import { SearchPanelInTable } from '../SearchPanelTable/SearchPanelInTable'
 import { TablePageLoader } from '../TablePageLoader'
-import { SearchPanelInTable } from '../Search Panel Table/SearchPanelInTable'
-import './_TablePage.css'
+import styles from './_TablePage.module.css'
 
 const TablePage = () => {
   return (
-    <div className="table-page">
+    <div className={styles['table-page']}>
       <SearchPanelInTable />
       <TablePageLoader />
-      <div className="table-page__btn-pagination-container">
+      <div className={styles['table-page__btn-pagination-container']}>
         <BtnOfPaginationTable />
       </div>
     </div>

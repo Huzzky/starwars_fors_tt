@@ -1,9 +1,9 @@
-import './App.css'
+import styles from './App.module.css'
 import { TablePage } from './components/Table/TablePage'
 
 function App() {
   return (
-    <div className="App">
+    <div className={styles.App}>
       <TablePage />
     </div>
   )
